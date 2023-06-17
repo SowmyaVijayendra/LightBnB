@@ -30,8 +30,11 @@ router.post("/login", (req, res) => {
     if (!user) {
       return res.send({ error: "no user with that id" });
     }
+console.log(password);
+console.log(user.password);
 
     if (!bcrypt.compareSync(password, user.password)) {
+      console.log("password dint match");      
       return res.send({ error: "error" });
     }
 
@@ -43,6 +46,9 @@ router.post("/login", (req, res) => {
         id: user.id,
       },
     });
+  })
+  .catch((err) => {
+    console.log(err.message);
   });
 });
 
