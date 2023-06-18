@@ -35,8 +35,8 @@ console.log(user.password);
 
     if (!bcrypt.compareSync(password, user.password)) {
       console.log("password dint match");      
-      return res.send({ error: "error" });
-    }
+    return res.send({ error: "error" });
+   }
 
     req.session.userId = user.id;
     res.send({
