@@ -5,8 +5,8 @@ A simple multi-page Airbnb clone that uses a server-side JS to display the infor
 ## Final Product
 
 !["Screenshot of Home page "](https://github.com/SowmyaVijayendra/LightBnB/blob/master/Images/HomePage.png)
-!["Screenshot of search page"](https://github.com/SowmyaVijayendra/LightBnB/blob/master/Images/New_property.png)
-!["Screenshot of Create property page"](https://github.com/SowmyaVijayendra/LightBnB/blob/master/Images/Search.png)
+!["Screenshot of Create property page"](https://github.com/SowmyaVijayendra/LightBnB/blob/master/Images/New_property.png)
+!["Screenshot of search page"](https://github.com/SowmyaVijayendra/LightBnB/blob/master/Images/Search.png)
 
 
 ## Dependencies
