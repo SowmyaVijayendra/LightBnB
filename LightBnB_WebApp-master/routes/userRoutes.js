@@ -32,7 +32,7 @@ router.post("/login", (req, res) => {
     }
 console.log(password);
 console.log(user.password);
-
+console.log(bcrypt.compareSync(password, user.password));
     if (!bcrypt.compareSync(password, user.password)) {
       console.log("password dint match");      
     return res.send({ error: "error" });
