@@ -75,7 +75,7 @@ const addUser = function (user) {
  * @return {Promise<[{}]>} A promise to the reservations.
  */
 const getAllReservations = function (guest_id, limit = 10) {
-  let query = `SELECT reservations.*, properties.title, properties.cost_per_night, avg(rating) as average_rating
+  let query = `SELECT reservations.*,properties.number_of_bedrooms, properties.number_of_bathrooms, properties.parking_spaces, properties.title, properties.cost_per_night, avg(rating) as average_rating
   FROM reservations
   JOIN properties ON reservations.property_id = properties.id
   JOIN property_reviews ON properties.id = property_reviews.property_id
@@ -110,7 +110,7 @@ const getAllProperties = function (options, limit = 10) {
   JOIN property_reviews ON properties.id = property_id`;
   if (options.city) {
     queryParams.push(`%${options.city}%`);
-    queryString += ` WHERE city LIKE $${queryParams.length} `;
+    queryString += ` WHERE city ILIKE $${queryParams.length} `;
   }
   if (options.owner_id) {
     queryParams.push(`${options.owner_id}`);
